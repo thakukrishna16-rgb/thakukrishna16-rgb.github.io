@@ -379,8 +379,8 @@ body.clean .draft-toggle i{background:transparent;border:1px solid var(--gallery
         <div class="gallery-image-label"><span class="live-dot"></span>FIRST-YEAR WORK, FRAMED</div>
       </div>
       <div class="image-caption">
-        <span>Four projects from my first semester</span>
-        <span>Research · Analysis · Operations · Communication</span>
+        <span>Six projects from my first semester</span>
+        <span>Research · Analysis · Accounting · Operations · Communication</span>
         <a href="#about" aria-label="Scroll to About"><svg class="ic"><use href="#i-arrow-d"/></svg></a>
       </div>
     </div>
@@ -417,6 +417,7 @@ body.clean .draft-toggle i{background:transparent;border:1px solid var(--gallery
           <button aria-pressed="true" data-filter="all">All projects</button>
           <button aria-pressed="false" data-filter="research">Research</button>
           <button aria-pressed="false" data-filter="analysis">Analysis</button>
+          <button aria-pressed="false" data-filter="accounting">Accounting</button>
           <button aria-pressed="false" data-filter="operations">Operations</button>
           <button aria-pressed="false" data-filter="communication">Communication</button>
         </div>
@@ -484,7 +485,8 @@ body.clean .draft-toggle i{background:transparent;border:1px solid var(--gallery
       <table class="skills-table">
         <thead><tr><th scope="col">Area</th><th scope="col">Tools &amp; methods</th><th scope="col">Where I’ve used it</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Data &amp; dashboards</th><td>MS Excel, Power BI</td><td>MS Excel and Power BI course</td></tr>
+          <tr><th scope="row">Data &amp; dashboards</th><td>MS Excel, Power BI, Power Query</td><td>ChaiNest Cafés sales report</td></tr>
+          <tr><th scope="row">Accounting</th><td>Opening balances, journal entries, reading annual reports and notes to accounts</td><td>Britannia Industries accounts project</td></tr>
           <tr><th scope="row">Quantitative analysis</th><td>Cost, revenue and profit functions, break-even analysis, graphs, matrices</td><td>Business Mathematics course project</td></tr>
           <tr><th scope="row">Field research</th><td>Ethnography, field observation, discussions with delivery partners</td><td>DIR ethnography on delivery partners</td></tr>
           <tr><th scope="row">AI for business</th><td>Applying AI tools to an operations problem</td><td>Technology Literacy for Managers, AI Studio Showcase</td></tr>
@@ -623,7 +625,26 @@ body.clean .draft-toggle i{background:transparent;border:1px solid var(--gallery
       <circle cx="118" cy="150" r="34" fill="none" stroke="${G}" stroke-width="1.6"/>
       <circle cx="100" cy="122" r="34" fill="none" stroke="${Q}" stroke-width="1.2"/>
       <circle cx="100" cy="141" r="3.5" fill="${INK}"/>
-      <text x="16" y="236" font-family="Work Sans, sans-serif" font-size="7" letter-spacing="1.4" fill="${Q}">PERSONA · RHETORIC</text></svg>`
+      <text x="16" y="236" font-family="Work Sans, sans-serif" font-size="7" letter-spacing="1.4" fill="${Q}">PERSONA · RHETORIC</text></svg>`,
+    dashboard: `<svg class="cover" viewBox="0 0 200 250" role="img" aria-label="Bar chart of ten cafés' sales against their targets">
+      <rect width="200" height="250" fill="${BG}"/>
+      <text x="26" y="52" font-family="Manrope, sans-serif" font-size="22" font-weight="600" fill="${INK}">₹4.74L</text>
+      <text x="26" y="66" font-family="Work Sans, sans-serif" font-size="7.5" fill="${Q}">2025 revenue · 98.1% of target</text>
+      <path d="M22 196H182" stroke="${Q}" stroke-width="1.2"/>
+      ${[[72,77],[58,61],[51,48],[49,46],[47,48],[46,44],[45,45],[44,45],[42,46],[35,33]].map(([a,t],i)=>{const x=28+i*15.2,h=a*1.25,th=t*1.25;return `<rect x="${x}" y="${196-h}" width="9" height="${h}" fill="${a>=t?G:INK}"/><path d="M${x-2} ${196-th}h13" stroke="${a>=t?INK:G}" stroke-width="1.4"/>`}).join('')}
+      <rect x="26" y="78" width="8" height="8" fill="${G}"/><text x="38" y="85" font-family="Work Sans, sans-serif" font-size="7" fill="${INK}">met target</text>
+      <rect x="96" y="78" width="8" height="8" fill="${INK}"/><text x="108" y="85" font-family="Work Sans, sans-serif" font-size="7" fill="${INK}">missed</text>
+      <text x="16" y="236" font-family="Work Sans, sans-serif" font-size="7" letter-spacing="1.4" fill="${Q}">CHAINEST CAFÉS · 2025 SALES</text></svg>`,
+    ledger: `<svg class="cover" viewBox="0 0 200 250" role="img" aria-label="Ledger page with debit and credit columns that balance">
+      <rect width="200" height="250" fill="${BG}"/>
+      <rect x="28" y="34" width="144" height="172" fill="${W}" stroke="#DCDCD5"/>
+      <path d="M100 48V192" stroke="${INK}" stroke-width="1.4"/><path d="M36 58H164" stroke="${INK}" stroke-width="1.4"/>
+      <text x="64" y="53" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="8" letter-spacing="1.2" fill="${INK}">DR</text>
+      <text x="136" y="53" text-anchor="middle" font-family="Work Sans, sans-serif" font-size="8" letter-spacing="1.2" fill="${INK}">CR</text>
+      ${[[76,44,30],[92,30,40],[108,38,24],[124,24,44],[140,40,32],[156,28,36]].map(([y,l,r])=>`<path d="M${92-l} ${y}H92" stroke="${Q}" stroke-width="2"/><path d="M${164-r} ${y}H164" stroke="${Q}" stroke-width="2"/>`).join('')}
+      <path d="M48 170H92M120 170H164" stroke="${INK}" stroke-width="1"/><path d="M48 186H92M120 186H164" stroke="${G}" stroke-width="2.4"/>
+      <circle cx="100" cy="186" r="6" fill="${G}"/><path d="M97 186l2 2 4-4" fill="none" stroke="${W}" stroke-width="1.4"/>
+      <text x="16" y="236" font-family="Work Sans, sans-serif" font-size="7" letter-spacing="1.4" fill="${Q}">BRITANNIA · FY 2025–26</text></svg>`
   };
 
   /* ---- Projects: strongest first. D() = draft to rewrite, S() = fill in ---- */
@@ -637,6 +658,26 @@ body.clean .draft-toggle i{background:transparent;border:1px solid var(--gallery
         ['My role', D('Fieldwork, and narration for the final video.')],
         ['Methods', 'Ethnography and field observation, ' + D('informal meetings and conversations with delivery partners') + ', and a documentary-style video with lines shared across all six members and no anchor.'],
         ['Outcome', D('A short documentary on what algorithmic supervision means for the people working under it.')]
+      ]},
+    { art:'dashboard', cat:'analysis', catLabel:'Analysis',
+      title:'A year of sales for a chai café chain',
+      meta:['MS Excel and Power BI','Section D · Group 3'],
+      brief: 'Cleaned a year of sales data for ChaiNest Cafés and presented it in a Power BI report.',
+      facts:[
+        ['Brief', 'We worked as junior analysts for ChaiNest Cafés, a made-up chain of 10 chai cafés, to analyse how the business fared in 2025. Every stage of the cleaning was done in Power Query.'],
+        ['My role', 'In our team of two, I cleaned and prepared the messy July to December sales data and created the three report pages.'],
+        ['Methods', 'Power Query cleaning (junk rows, 13 different ways of writing the payment mode, duplicate orders and test entries), combining five datasets into one 600-order table, new columns like revenue and gap versus target, and a Power BI report with slicers and filters.'],
+        ['Outcome', 'The chain made ₹4,73,725 against a target of ₹4,83,000 (98.1%). Five of the ten cafés met their target, and Connaught Place, New Delhi, the top-earning café, had the biggest miss.']
+      ]},
+    { art:'ledger', cat:'accounting', catLabel:'Accounting',
+      title:'Bookkeeping for Britannia Industries',
+      meta:['Financial Accounting','Group project'],
+      brief: 'Recorded Britannia Industries’ opening balances from its 2024–25 annual report and simulated a full year of transactions for the business.',
+      facts:[
+        ['Brief', 'The task involved preparing opening balances from the company’s standalone balance sheet as at 31 March 2025, followed by 30 transactions from 1 April 2025 to 31 March 2026.'],
+        ['My role', 'Calculated the opening balances from the annual report and prepared the 30 transactions with their journal entries.'],
+        ['Methods', 'Studied the balance sheet and notes to accounts to build a ledger-level opening trial balance with page and note references, then wrote 15 general and 15 FMCG-specific journal entries (packing materials, contract manufacturing, trade schemes, exports, state subsidies, plastic waste compliance and CSR), each with its basis and assumptions.'],
+        ['Outcome', 'An opening trial balance of ₹8,019.72 crore that balances, and a full year of transaction records.']
       ]},
     { art:'breakeven', cat:'analysis', catLabel:'Analysis',
       title:'Finding a café’s break-even point',
@@ -672,13 +713,14 @@ body.clean .draft-toggle i{background:transparent;border:1px solid var(--gallery
 
   const COURSES = [
     ['Business Mathematics', 'Quantitative foundations', 'Matrices and determinants, functions and graphs, permutations and combinations, the binomial theorem, coordinate geometry, mathematical induction and compound interest, applied in a café break-even project.'],
-    ['MS Excel and Power BI', 'Data and dashboards', D('Using data in Excel and building visual reports in Power BI, including a sales report for a chain of cafés.')],
+    ['MS Excel and Power BI', 'Data and dashboards', 'Data cleaning and merging in Power Query, along with visual reports in Power BI, applied to a full year of sales for a chain of chai cafés.'],
+    ['Financial Accounting', 'Accounting foundations', 'Making journal entries for business activities and interpreting company annual reports, applied to a year of simulated transactions for Britannia Industries.'],
     ['Technology Literacy for Managers', 'Technology and AI for business', D('Learning how managers use technology, with hands-on work on AI tools for the AI Studio Showcase.')],
     ['Diversity, Inclusivity and Rootedness', 'Society and work', D('Understanding people and communities through fieldwork, which led to our ethnography on app-based delivery work.')]
   ];
 
   /* Hero wall */
-  $('#hero-wall').insertAdjacentHTML('beforeend', PROJECTS.map(p => `<div class="print-mat">${ART[p.art]}</div>`).join(''));
+  $('#hero-wall').insertAdjacentHTML('beforeend', PROJECTS.slice(0, 4).map(p => `<div class="print-mat">${ART[p.art]}</div>`).join(''));
 
   /* Project grid */
   const grid = $('#portfolio-grid');
